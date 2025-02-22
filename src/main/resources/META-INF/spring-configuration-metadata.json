@@ -1,0 +1,52 @@
+{
+  "groups": [
+    {
+      "name": "outbox.topic",
+      "description": "Topics in key-value format, where the key is the message type and the value is the topic name.",
+      "type": "java.util.Map"
+    }
+  ],
+  "properties": [
+    {
+      "name": "outbox.topic.default",
+      "description": "Default topic where messages will be sent.",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "outbox.message.limit",
+      "description": "Number of messages that can be sent at once.",
+      "defaultValue": 500,
+      "type": "java.lang.Integer"
+    },
+    {
+      "name": "outbox.message.clean-days",
+      "description": "Cleanup of records in the table that were modified later than the current time minus the specified days.",
+      "defaultValue": 30,
+      "type": "java.lang.Long"
+    },
+    {
+      "name": "outbox.scheduler.sender.enabled",
+      "description": "Enable/disable the message sending scheduler.",
+      "defaultValue": false,
+      "type": "java.lang.Boolean"
+    },
+    {
+      "name": "outbox.scheduler.sender.delay",
+      "description": "Fixed time (in milliseconds) for sending messages.",
+      "defaultValue": "10000",
+      "type": "java.lang.String"
+    },
+    {
+      "name": "outbox.scheduler.cleaner.enabled",
+      "description": "Enable/disable the message cleanup scheduler.",
+      "defaultValue": false,
+      "type": "java.lang.Boolean"
+    },
+    {
+      "name": "outbox.scheduler.cleaner.cron",
+      "description": "Fixed time (cron) for deleting old records from the table.",
+      "defaultValue": "1 * * * * *",
+      "type": "java.lang.String"
+    }
+  ]
+}
