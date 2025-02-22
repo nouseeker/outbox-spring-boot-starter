@@ -1,0 +1,1 @@
+rootProject.name = "outbox-spring-boot-starter"
